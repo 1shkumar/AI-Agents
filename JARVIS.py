@@ -1,3 +1,8 @@
+#code contributed by-Vansh Kumar
+#github.com/1shkumar
+#vanshkr22@gmail.com
+#vansh.kumar.ug21@nsut.ac.in
+
 import requests
 
 class State:
@@ -40,10 +45,12 @@ class CodeGenerationAgent(Conversation):
         super().__init__()
         self.headers = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmM3OWJhOGYtYjNiOC00OTkyLWJkNjItYTA1YzA1Zjk2Zjg2IiwidHlwZSI6ImFwaV90b2tlbiJ9.mvKiWHbwtfbtuhvzJ-sYp5xhnJGBE3H_L2ehQTyaCig"}
         self.url = "https://api.edenai.run/v2/text/code_generation"
+        self.memory = []  
 
         default_state = State("default")
-
+        
         default_state.add_transition("generate", default_state, self.generate_code)
+
 
         self.add_state(default_state)
         self.set_initial_state("default")
@@ -51,9 +58,11 @@ class CodeGenerationAgent(Conversation):
     def generate_code(self, context):
         prompt = input("Enter the prompt: ")
         instruction = input("Enter the instruction: ")
+
+        context_str = "\n".join(self.memory)
         payload = {
             "providers": "openai",
-            "prompt": prompt,
+            "prompt": f"{context_str}\n{prompt}",
             "instruction": instruction,
             "temperature": 0.1,
             "max_tokens": 500,
@@ -64,6 +73,9 @@ class CodeGenerationAgent(Conversation):
             response.raise_for_status()
             result = response.json()
             generated_code = result['openai']['generated_text']
+            
+            self.memory.append(f"Prompt: {prompt}")
+            self.memory.append(f"Instruction: {instruction}")
             return generated_code
         except requests.exceptions.RequestException as error:
             print(f"Error generating code: {error}")
