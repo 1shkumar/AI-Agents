@@ -16,7 +16,7 @@ This is the logic for what state the chatbot is in. If the last message is a too
 
 ![Screenshot (833)](https://github.com/1shkumar/AI-Agents/assets/97458999/5bf2244e-d1ff-43df-9d59-e71759998f9e)
 
-#Langgraph
+# LangGraph
 
 Langgraph is a specialized library within the LangChain ecosystem designed to enhance the efficiency of AI applications. It facilitates the creation of stateful, multi-actor applications with large language models (LLMs). The primary advantage of Langgraph is its ability to coordinate and checkpoint various chains or actors using standard Python functions.
 
@@ -24,5 +24,10 @@ Langgraph marks a significant advancement in managing cyclic computational steps
 
 ![langgraph1 (1)](https://github.com/1shkumar/AI-Agents/assets/97458999/c5d980f5-1099-4c9a-aab0-a4f5249075e5)
 
+LangGraph offers several benefits over other AI libraries for developers who want to create stateful, multi-actor applications with Large Language Models (LLMs).
 
+#Flexibility: LangGraph provides a high-level abstraction for defining and managing the actors, the LLMs, and their interactions using a graph-based representation. This approach allows developers to create more complex and sophisticated applications that require a memory of previous conversations or actions.
+#Scalability: LangGraph is built on top of LangChain, a decentralized network for language model computation and storage. This architecture enables developers to scale their applications easily by adding more nodes to the network.
+#Cyclic data flows: LangGraph supports cyclic data flows, which allow nodes to receive feedback from their previous outputs and inputs. This feature enables applications to maintain a memory of past interactions and use that information to tailor their responses accordingly.
+#Ease of use: LangGraph is designed to be easy to use, with a simple and intuitive API that enables developers to create stateful, multi-actor applications with LLMs quickly.
 
