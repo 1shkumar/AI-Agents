@@ -1,4 +1,4 @@
-![image](https://github.com/1shkumar/AI-Agents/assets/97458999/e80da3f0-b16a-4885-ac8a-e0d36e72d03b)# AI-Agents
+# AI-Agents
 Experimenting with implementing AI agents and exploring their potential applications using Langgraph.
 
 # What are AI agents?
