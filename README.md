@@ -22,8 +22,6 @@ Langgraph is a specialized library within the LangChain ecosystem designed to en
 
 Langgraph marks a significant advancement in managing cyclic computational steps, where traditional Directed Acyclic Graphs (DAGs) fall short. Inspired by systems like Pregel and Apache Beam, and utilizing an interface akin to NetworkX, it extends the LangChain Expression Language to handle multiple actors and chains in complex workflows. These capabilities enable developers to orchestrate intricate program structures, which are crucial for applications that require intelligent, agent-like behaviors and iterative decision-making processes.
 
-![langgraph1](https://github.com/1shkumar/AI-Agents/assets/97458999/57a6abe1-1d27-4f22-8d57-5ba54720c00f)
-
 ![langgraph1 (1)](https://github.com/1shkumar/AI-Agents/assets/97458999/c5d980f5-1099-4c9a-aab0-a4f5249075e5)
 
 
